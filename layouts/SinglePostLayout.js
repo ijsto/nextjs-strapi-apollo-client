@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 
-const StyledSingleBookWrapper = styled.div`
+const StyledSinglePostWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 300px;
 `;
-const StyledSingleBook = styled.div`
+const StyledSinglePost = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   max-width: 680px;
 `;
-const StyledSingleBookHeader = styled.div`
+const StyledSinglePostHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,19 +25,19 @@ const StyledSingleBookHeader = styled.div`
   }
 `;
 
-const SingleBookLayout = ({ children }) => (
+const SinglePostLayout = ({ children }) => (
   <>
     <Header />
 
-    <StyledSingleBookHeader>
+    <StyledSinglePostHeader>
       <h1>Single Book View</h1>
-    </StyledSingleBookHeader>
+    </StyledSinglePostHeader>
 
-    <StyledSingleBookWrapper>
-      <StyledSingleBook>{children}</StyledSingleBook>
-    </StyledSingleBookWrapper>
+    <StyledSinglePostWrapper>
+      <StyledSinglePost>{children}</StyledSinglePost>
+    </StyledSinglePostWrapper>
     <Footer />
   </>
 );
 
-export default SingleBookLayout;
+export default SinglePostLayout;
