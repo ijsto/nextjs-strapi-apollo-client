@@ -1,13 +1,49 @@
 import Jumbo from '../components/dataDisplay/Jumbo';
 import QuerySample from '../components/QuerySample';
 import MutationSample from '../components/MutationSample';
+import defaultPage from '../hoc/defaultPage';
+import { userLogin, userLogout, userRegister } from '../lib/auth';
 
-export default () => {
+const Index = props => {
+  const { isAuthenticated } = props;
   return (
     <div style={{ maxWidth: '90%', margin: '0 auto' }}>
       <Jumbo>
         <h1>Next.js with GraphQL Apollo Client</h1>
       </Jumbo>
+
+      <pre>{JSON.stringify(props)}</pre>
+
+      {isAuthenticated ? (
+        <button
+          type="button"
+          onClick={() => {
+            userLogout();
+          }}
+        >
+          LOG OUT
+        </button>
+      ) : (
+        <>
+          <button
+            type="button"
+            onClick={() => userLogin('user1577641791788', 'password23456')}
+          >
+            LOG IN
+          </button>
+          <button
+            type="button"
+            onClick={() =>
+              userRegister(
+                `user${Date.now()}`,
+                `user${Date.now()}@ijs.to`,
+                'password2345'
+              )}
+          >
+            REGISTER
+          </button>
+        </>
+      )}
 
       <QuerySample />
       <MutationSample />
@@ -59,3 +95,4 @@ export default () => {
     </div>
   );
 };
+export default defaultPage(Index);
