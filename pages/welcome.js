@@ -1,17 +1,13 @@
+import Router from 'next/router';
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
 
 export const WelcomePage = ({ query }) => {
   useEffect(() => {
-    console.log('Mounted', { query });
     Cookies.set('token', query.access_token);
+    Router.push('/');
   });
-  return (
-    <>
-      <h2>Welcome</h2>
-      <div>To this page</div>
-    </>
-  );
+  return <div>Loading ..</div>;
 };
 
 export default WelcomePage;
