@@ -56,7 +56,8 @@ const Index = props => {
   return (
     <div style={{ maxWidth: '90%', margin: '0 auto' }}>
       <Jumbo>
-        <h1>Next.js with GraphQL Apollo Client</h1>
+        <h1>Full-stack React blog</h1>
+        <h3>Next.js, Strapi, GraphQL</h3>
       </Jumbo>
 
       <h2>Me {isAuthenticated ? 'is authenticated' : 'is not authenticate'}</h2>
@@ -83,7 +84,8 @@ const Index = props => {
           </button>
           <button
             type="button"
-            onClick={() => userRegister(`scott`, `scott@ijs.to`, 'agirs')}
+            onClick={() =>
+              userRegister(`scottagirs`, `scott.agirs@gmail.com`, 'agirs')}
           >
             REGISTER
           </button>
